@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baixando Gerenciamento Master...</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #121214;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: #e1e1e6;
+    }
+    .container {
+      max-width: 650px;
+      background: #202024;
+      border: 1px solid #323238;
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .icon {
+      font-size: 64px;
+      margin-bottom: 15px;
+    }
+    h1 {
+      color: #00B37E;
+      font-size: 28px;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    p {
+      color: #a8a8b3;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 15px 0;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 14px 28px;
+      background-color: #00B37E;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background-color: #00875f;
+    }
+    .steps {
+      margin-top: 30px;
+      text-align: left;
+      background: #121214;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #29292e;
+    }
+    .steps h3 {
+      margin-top: 0;
+      color: #00B37E;
+      font-size: 16px;
+    }
+    .steps ol {
+      margin: 0;
+      padding-left: 20px;
+      color: #c4c4cc;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    code {
+      background: #29292e;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #00B37E;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">ðŸ¤–</div>
+    <h1>SEU DOWNLOAD VAI COMEÃ‡AR!</h1>
+    <p>O arquivo <strong>Gerenciamento_Master.zip</strong> estÃ¡ sendo baixado automaticamente.</p>
+    <p>Caso o download nÃ£o inicie, <a href="Gerenciamento_Master.zip" class="btn" id="manualLink">Clique aqui para baixar</a></p>
+
+    <div class="steps">
+      <h3>âš¡ Como Instalar no MetaTrader 5:</h3>
+      <ol>
+        <li>Abra o arquivo <strong>Gerenciamento_Master.zip</strong> baixado.</li>
+        <li>DÃª dois cliques no arquivo <code>instalar.bat</code> para instalar automaticamente em todos os seus MetaTraders!</li>
+        <li>Ou manualmente: Copie a pasta <code>Gerenciamento Master</code> para: <br><code>MetaTrader 5 &rarr; Arquivo &rarr; Abrir Pasta de Dados &rarr; MQL5 &rarr; Experts</code>.</li>
+        <li>No MetaTrader 5, clique com o botÃ£o direito em <strong>RobÃ´s (Expert Advisors)</strong> e selecione <strong>Atualizar</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var a = document.createElement("a");
+        a.href = "Gerenciamento_Master.zip";
+        a.download = "Gerenciamento_Master.zip";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }, 600);
+    });
+  </script>
+</body>
+</html>
