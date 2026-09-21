@@ -2,90 +2,223 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Baixando Gerenciamento Master...</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #1a1a1a;
-      font-family: Arial, sans-serif;
+      background-color: #121214;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       text-align: center;
       padding: 20px;
+      color: #e1e1e6;
     }
     .container {
-      max-width: 700px;
+      max-width: 680px;
+      width: 100%;
+      background: #202024;
+      border: 1px solid #323238;
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      z-index: 1;
     }
-    .icon {
-      font-size: 80px;
+    .icon-wrapper {
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .icon-svg {
+      width: 72px;
+      height: 72px;
+      fill: none;
+      stroke: #00B37E;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     h1 {
-      color: #25D366;
-      font-size: 32px;
-      margin-bottom: 20px;
-      line-height: 1.3;
+      color: #00B37E;
+      font-size: 28px;
+      margin: 0 0 16px 0;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
-    p {
-      color: #cccccc;
-      font-size: 22px;
-      line-height: 1.5;
-      margin-top: 30px;
+    .subtitle {
+      color: #a8a8b3;
+      font-size: 17px;
+      line-height: 1.6;
+      margin: 0 0 24px 0;
     }
-    .click-here {
-      color: #25D366;
-      font-weight: bold;
-      text-decoration: underline;
+    .btn-download {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #00B37E;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.1s;
       cursor: pointer;
     }
-    .click-here:hover {
-      color: #1ebe5a;
+    .btn-download:hover {
+      background-color: #00875f;
+      transform: translateY(-1px);
     }
-    .arrow {
+    .steps {
+      margin-top: 32px;
+      text-align: left;
+      background: #121214;
+      padding: 24px;
+      border-radius: 8px;
+      border: 1px solid #29292e;
+    }
+    .steps h3 {
+      margin: 0 0 16px 0;
+      color: #00B37E;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .steps ol {
+      margin: 0;
+      padding-left: 20px;
+      color: #c4c4cc;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .steps li {
+      margin-bottom: 10px;
+    }
+    .steps li:last-child {
+      margin-bottom: 0;
+    }
+    code {
+      background: #29292e;
+      padding: 3px 8px;
+      border-radius: 4px;
+      color: #00B37E;
+      font-size: 13px;
+      font-family: Consolas, monospace;
+    }
+    .arrow-container {
       position: fixed;
-      top: 20px;
-      right: 500px;
-      font-size: 50px;
-      color: #25D366;
-      animation: bounce 1s infinite;
+      top: 25px;
+      right: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #00B37E;
+      z-index: 999;
+      animation: bounce 1.2s infinite ease-in-out;
+    }
+    .arrow-icon {
+      font-size: 40px;
+      line-height: 1;
     }
     .arrow-label {
-      position: fixed;
-      top: 85px;
-      right: 480px;
-      color: #25D366;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: bold;
       text-align: center;
+      margin-top: 4px;
+      background: rgba(18, 18, 20, 0.85);
+      padding: 4px 8px;
+      border-radius: 6px;
+      border: 1px solid #323238;
     }
     @keyframes bounce {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(15px); }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @media (max-width: 600px) {
+      .arrow-container {
+        display: none;
+      }
+      .container {
+        padding: 24px 16px;
+      }
+      h1 {
+        font-size: 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon">📥</div>
-    <h1>SEU DOWNLOAD VAI COMEÇAR EM BREVE!<br>Caso não inicie, <a href="Gerenciamento_Master.zip" download="Gerenciamento_Master.zip" class="click-here" id="manualLink">clique aqui</a>.</h1>
-    <p>Depois de pronto, verifique sua pasta de download.</p>
+  <div class="arrow-container">
+    <div class="arrow-icon">&#8599;</div>
+    <div class="arrow-label">Seu arquivo<br>aparece aqui</div>
   </div>
-  <div class="arrow">↗</div>
-  <div class="arrow-label">Seu arquivo<br>aparece aqui</div>
+
+  <div class="container">
+    <div class="icon-wrapper">
+      <svg class="icon-svg" viewBox="0 0 24 24">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+    </div>
+
+    <h1>SEU DOWNLOAD VAI COME&Ccedil;AR!</h1>
+    <p class="subtitle">O arquivo <strong>Gerenciamento_Master.zip</strong> est&aacute; sendo baixado automaticamente.</p>
+    
+    <div style="margin: 20px 0;">
+      <span style="color: #a8a8b3; font-size: 15px; margin-right: 12px;">Caso o download n&atilde;o inicie,</span>
+      <a href="Gerenciamento_Master.zip" download="Gerenciamento_Master.zip" class="btn-download" id="manualLink">Clique aqui para baixar</a>
+    </div>
+
+    <div class="steps">
+      <h3>&#9889; Como Instalar no MetaTrader 5:</h3>
+      <ol>
+        <li>Abra o arquivo <strong>Gerenciamento_Master.zip</strong> baixado.</li>
+        <li>D&ecirc; dois cliques no arquivo <code>instalar.bat</code> para instalar automaticamente em todos os seus MetaTraders!</li>
+        <li>Ou manualmente: Copie a pasta <code>Gerenciamento Master</code> para:<br>
+          <code>MetaTrader 5 &rarr; Arquivo &rarr; Abrir Pasta de Dados &rarr; MQL5 &rarr; Experts</code>
+        </li>
+        <li>No MetaTrader 5, clique com o bot&atilde;o direito em <strong>Rob&ocirc;s (Expert Advisors)</strong> e selecione <strong>Atualizar</strong>.</li>
+      </ol>
+    </div>
+  </div>
+
   <script>
-    fetch("Gerenciamento_Master.zip")
-      .then(function(r) { return r.blob(); })
-      .then(function(blob) {
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement("a");
-        a.href = url;
-        a.download = "Gerenciamento_Master.zip";
-        document.body.appendChild(a);
-        a.click();
-        URL.revokeObjectURL(url);
-      });
+    function triggerDownload() {
+      fetch('Gerenciamento_Master.zip')
+        .then(function(response) {
+          if (!response.ok) throw new Error('Network error');
+          return response.blob();
+        })
+        .then(function(blob) {
+          var url = window.URL.createObjectURL(blob);
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = 'Gerenciamento_Master.zip';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          window.URL.revokeObjectURL(url);
+        })
+        .catch(function(err) {
+          var a = document.createElement('a');
+          a.href = 'Gerenciamento_Master.zip';
+          a.download = 'Gerenciamento_Master.zip';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(triggerDownload, 600);
+    });
   </script>
 </body>
 </html>
